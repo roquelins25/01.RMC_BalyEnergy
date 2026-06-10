@@ -1,0 +1,107 @@
+table 'sapiens_producao usu_view090rep'
+	lineageTag: ff829259-da5e-4e8b-b4f3-64ca019fbaf8
+
+	column codrep
+		dataType: int64
+		formatString: 0
+		lineageTag: ea1f3cb3-f68c-48f9-94de-49470a96f546
+		summarizeBy: sum
+		sourceColumn: codrep
+
+		annotation SummarizationSetBy = Automatic
+
+	column nomrep
+		dataType: string
+		lineageTag: 8226135c-f504-4b98-9b82-51fa88619049
+		summarizeBy: none
+		sourceColumn: nomrep
+
+		annotation SummarizationSetBy = Automatic
+
+	column aperep
+		dataType: string
+		lineageTag: da51cb7e-272c-4e67-9b3b-cb3088ae1a76
+		summarizeBy: none
+		sourceColumn: aperep
+
+		annotation SummarizationSetBy = Automatic
+
+	column tiprep
+		dataType: string
+		lineageTag: b71f0ffb-a66c-4659-9f63-9c1b817afd54
+		summarizeBy: none
+		sourceColumn: tiprep
+
+		annotation SummarizationSetBy = Automatic
+
+	column cidrep
+		dataType: string
+		lineageTag: 716662ba-d6b3-43cc-8af8-aee38a4c70a7
+		summarizeBy: none
+		sourceColumn: cidrep
+
+		annotation SummarizationSetBy = Automatic
+
+	column sigufs
+		dataType: string
+		lineageTag: 200625d1-90ec-4f8d-a70c-a1b7a8aeaa79
+		summarizeBy: none
+		sourceColumn: sigufs
+
+		annotation SummarizationSetBy = Automatic
+
+	column fonrep
+		dataType: string
+		lineageTag: bd6819b5-5e9d-4c28-ade4-108850188a61
+		summarizeBy: none
+		sourceColumn: fonrep
+
+		annotation SummarizationSetBy = Automatic
+
+	column sitrep
+		dataType: string
+		lineageTag: 600aef07-9b21-4a3f-b380-3b1388d1786a
+		summarizeBy: none
+		sourceColumn: sitrep
+
+		annotation SummarizationSetBy = Automatic
+
+	column repsup
+		dataType: int64
+		formatString: 0
+		lineageTag: 8eb56de6-7bdc-4dac-aac9-c83d8c9c3f46
+		summarizeBy: sum
+		sourceColumn: repsup
+
+		annotation SummarizationSetBy = Automatic
+
+	column nomsup
+		dataType: string
+		lineageTag: 4a9af0bf-7eed-438d-a276-6e4aa0ed1cf1
+		summarizeBy: none
+		sourceColumn: nomsup
+
+		annotation SummarizationSetBy = Automatic
+
+	column Rep_concat
+		dataType: int64
+		formatString: 0
+		lineageTag: f9849f94-1a9c-401e-846f-0f42314b2c36
+		summarizeBy: sum
+		sourceColumn: Rep_concat
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'sapiens_producao usu_view090rep' = m
+		mode: import
+		source =
+				let
+				    Fonte = Sql.Database("159.112.182.77", "I260220090255_ERPP"),
+				    sapiens_producao_usu_view090rep = Fonte{[Schema="sapiens_producao",Item="usu_view090rep"]}[Data]
+				in
+				    sapiens_producao_usu_view090rep
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Table
+

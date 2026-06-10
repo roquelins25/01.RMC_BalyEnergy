@@ -10,5 +10,9 @@ annotation __PBI_TimeIntelligenceEnabled = 1
 
 annotation PBI_ProTooling = ["DevMode"]
 
+annotation PBI_QueryOrder = ["sapiens_producao usu_view090rep"]
+
+ref table 'sapiens_producao usu_view090rep'
+
 ref cultureInfo pt-BR
 
