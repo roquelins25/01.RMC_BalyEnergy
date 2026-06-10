@@ -1,0 +1,253 @@
+table TB_Cliente
+	lineageTag: 1957465b-641b-4f86-8786-f8339e542da0
+
+	column codcli
+		dataType: int64
+		formatString: 0
+		lineageTag: 9c65a014-c845-4f83-8cdd-e2e5788a2c77
+		summarizeBy: none
+		sourceColumn: codcli
+
+		annotation SummarizationSetBy = Automatic
+
+	column nomcli
+		dataType: string
+		lineageTag: 098e5b31-2c9e-4405-b016-236f02b60777
+		summarizeBy: none
+		sourceColumn: nomcli
+
+		annotation SummarizationSetBy = Automatic
+
+	column cgccpf
+		dataType: int64
+		formatString: 0
+		lineageTag: 45a7d7fe-2191-4c5f-85bd-851870421fde
+		summarizeBy: sum
+		sourceColumn: cgccpf
+
+		annotation SummarizationSetBy = Automatic
+
+	column apecli
+		dataType: string
+		lineageTag: 3caba974-6d67-4a13-b5c9-7e4c9c87cd91
+		summarizeBy: none
+		sourceColumn: apecli
+
+		annotation SummarizationSetBy = Automatic
+
+	column usu_perdup
+		dataType: string
+		lineageTag: b344a060-20a6-4927-85c6-0c8bcb8a9526
+		summarizeBy: none
+		sourceColumn: usu_perdup
+
+		annotation SummarizationSetBy = Automatic
+
+	column marcli
+		dataType: string
+		lineageTag: f990da5e-2aae-4063-8862-4e28b46971e5
+		summarizeBy: none
+		sourceColumn: marcli
+
+		annotation SummarizationSetBy = Automatic
+
+	column codgre
+		dataType: int64
+		formatString: 0
+		lineageTag: be678ed1-73d0-42ac-bb2a-d2ebf4ee1d64
+		summarizeBy: sum
+		sourceColumn: codgre
+
+		annotation SummarizationSetBy = Automatic
+
+	column cepcli
+		dataType: int64
+		formatString: 0
+		lineageTag: e3457d38-c2ca-4d4b-9ba2-5a27ed219ba2
+		summarizeBy: sum
+		sourceColumn: cepcli
+
+		annotation SummarizationSetBy = Automatic
+
+	column endcli
+		dataType: string
+		lineageTag: fa9b26ae-4aa6-40fd-96f6-ee0c67b90a54
+		summarizeBy: none
+		sourceColumn: endcli
+
+		annotation SummarizationSetBy = Automatic
+
+	column cidcli
+		dataType: string
+		lineageTag: 35771402-7811-453a-9977-a3b9120d8d73
+		summarizeBy: none
+		sourceColumn: cidcli
+
+		annotation SummarizationSetBy = Automatic
+
+	column sigufs
+		dataType: string
+		lineageTag: f66c2d24-c5d3-4941-bbd0-535e4d7693d5
+		summarizeBy: none
+		sourceColumn: sigufs
+
+		annotation SummarizationSetBy = Automatic
+
+	column foncli
+		dataType: string
+		lineageTag: fac1958d-cd35-40d0-b804-e4bfed6ac723
+		summarizeBy: none
+		sourceColumn: foncli
+
+		annotation SummarizationSetBy = Automatic
+
+	column datcad
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 30395f0c-0052-4f88-a3f1-14db35e0ecb5
+		summarizeBy: none
+		sourceColumn: datcad
+
+		variation Variation
+			isDefault
+			relationship: 75e9a094-ee8e-48ab-8bbe-66d458724928
+			defaultHierarchy: LocalDateTable_3bfd1a40-9e0e-4a64-8463-74deb10c71e3.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column sitcli
+		dataType: string
+		lineageTag: 5b07b758-76cf-4af2-99af-841179b1e230
+		summarizeBy: none
+		sourceColumn: sitcli
+
+		annotation SummarizationSetBy = Automatic
+
+	column codrep
+		dataType: int64
+		formatString: 0
+		lineageTag: 41275b74-ead4-4fbd-97a7-1082715c224a
+		summarizeBy: sum
+		sourceColumn: codrep
+
+		annotation SummarizationSetBy = Automatic
+
+	column nomrep
+		dataType: string
+		lineageTag: ca6f9701-6b8b-4273-b667-64237aefe7c3
+		summarizeBy: none
+		sourceColumn: nomrep
+
+		annotation SummarizationSetBy = Automatic
+
+	column codpai
+		dataType: string
+		lineageTag: e94c9919-4443-4d78-820b-b9ffb18d29b3
+		summarizeBy: none
+		sourceColumn: codpai
+
+		annotation SummarizationSetBy = Automatic
+
+	column nompai
+		dataType: string
+		lineageTag: d674feee-8aeb-48cb-9aba-157e5f256274
+		summarizeBy: none
+		sourceColumn: nompai
+
+		annotation SummarizationSetBy = Automatic
+
+	column codram
+		dataType: string
+		lineageTag: a90f07c9-7d7d-4d81-bd51-1e728170ec8c
+		summarizeBy: none
+		sourceColumn: codram
+
+		annotation SummarizationSetBy = Automatic
+
+	column usu_codram
+		dataType: string
+		lineageTag: c76da4bd-6ea4-4df3-b54a-09f43b0e6781
+		summarizeBy: none
+		sourceColumn: usu_codram
+
+		annotation SummarizationSetBy = Automatic
+
+	column usu_desram
+		dataType: string
+		lineageTag: 3bf8b801-1bc0-419b-af29-6c319626e2d5
+		summarizeBy: none
+		sourceColumn: usu_desram
+
+		annotation SummarizationSetBy = Automatic
+
+	column SitFinanceiro
+		dataType: string
+		lineageTag: 3cefe3e4-a02a-427d-8e25-ce10ac03e1e9
+		summarizeBy: none
+		sourceColumn: SitFinanceiro
+
+		annotation SummarizationSetBy = Automatic
+
+	column SitInadimplencia
+		dataType: string
+		lineageTag: 1c609c57-5ecc-4bcf-8a9a-00d5e7a9227a
+		summarizeBy: none
+		sourceColumn: SitInadimplencia
+
+		annotation SummarizationSetBy = Automatic
+
+	column codcpg
+		dataType: string
+		lineageTag: 2572ab6e-89d4-452d-a394-ce242a200fa2
+		summarizeBy: none
+		sourceColumn: codcpg
+
+		annotation SummarizationSetBy = Automatic
+
+	column abrcpg
+		dataType: string
+		lineageTag: b902af1a-e865-48f6-be79-cff0bcea857c
+		summarizeBy: none
+		sourceColumn: abrcpg
+
+		annotation SummarizationSetBy = Automatic
+
+	column vlrlim
+		dataType: double
+		lineageTag: 8f3bd1ae-5576-4304-96cd-2b0aedf76590
+		summarizeBy: sum
+		sourceColumn: vlrlim
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column exiage
+		dataType: string
+		lineageTag: f768d391-ddb0-4e4d-aa69-f4401350c63f
+		summarizeBy: none
+		sourceColumn: exiage
+
+		annotation SummarizationSetBy = Automatic
+
+	column Dep_Padrao
+		dataType: string
+		lineageTag: 74066580-fa25-4a10-99f7-c33a3ac9fbd1
+		summarizeBy: none
+		sourceColumn: Dep_Padrao
+
+		annotation SummarizationSetBy = Automatic
+
+	partition TB_Cliente = m
+		mode: import
+		source =
+				let
+				    Fonte = Sql.Database("159.112.182.77", "I260220090255_ERPP"),
+				    sapiens_producao_usu_view085cli = Fonte{[Schema="sapiens_producao",Item="usu_view085cli"]}[Data]
+				in
+				    sapiens_producao_usu_view085cli
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Table
+

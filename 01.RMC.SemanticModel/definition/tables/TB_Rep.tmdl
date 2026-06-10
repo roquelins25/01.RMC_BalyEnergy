@@ -1,11 +1,11 @@
-table 'sapiens_producao usu_view090rep'
+table TB_Rep
 	lineageTag: ff829259-da5e-4e8b-b4f3-64ca019fbaf8
 
 	column codrep
 		dataType: int64
 		formatString: 0
 		lineageTag: ea1f3cb3-f68c-48f9-94de-49470a96f546
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: codrep
 
 		annotation SummarizationSetBy = Automatic
@@ -70,7 +70,7 @@ table 'sapiens_producao usu_view090rep'
 		dataType: int64
 		formatString: 0
 		lineageTag: 8eb56de6-7bdc-4dac-aac9-c83d8c9c3f46
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: repsup
 
 		annotation SummarizationSetBy = Automatic
@@ -87,12 +87,12 @@ table 'sapiens_producao usu_view090rep'
 		dataType: int64
 		formatString: 0
 		lineageTag: f9849f94-1a9c-401e-846f-0f42314b2c36
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: Rep_concat
 
 		annotation SummarizationSetBy = Automatic
 
-	partition 'sapiens_producao usu_view090rep' = m
+	partition TB_Rep = m
 		mode: import
 		source =
 				let
