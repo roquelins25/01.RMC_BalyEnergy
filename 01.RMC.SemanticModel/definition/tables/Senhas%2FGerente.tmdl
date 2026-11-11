@@ -1,0 +1,67 @@
+table Senhas/Gerente
+	lineageTag: 22fe0c8b-9216-4994-99ac-b611bd24c603
+
+	column Usuario
+		dataType: string
+		lineageTag: 950078b3-7dba-4f97-8018-ab7b671d4fd8
+		summarizeBy: none
+		sourceColumn: Usuario
+
+		annotation SummarizationSetBy = Automatic
+
+	column Senha
+		dataType: int64
+		formatString: 0
+		lineageTag: 98ce9020-e7a7-4d05-bab1-f683de01f8e3
+		summarizeBy: sum
+		sourceColumn: Senha
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID
+		dataType: string
+		lineageTag: 2671a3fe-fc15-45ad-84f9-06952211654b
+		summarizeBy: none
+		sourceColumn: ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cargo
+		dataType: string
+		lineageTag: 56784148-3100-48cc-8aa8-cc96752b2a26
+		summarizeBy: none
+		sourceColumn: Cargo
+
+		annotation SummarizationSetBy = Automatic
+
+	column Key
+		dataType: int64
+		formatString: 0
+		lineageTag: 2aff5845-cb87-4925-a9a7-5b3d60864ca4
+		summarizeBy: count
+		sourceColumn: Key
+
+		annotation SummarizationSetBy = Automatic
+
+	column Flag_Fat
+		dataType: string
+		lineageTag: 697128b2-7ffc-4121-8d63-236d524a8b5e
+		summarizeBy: none
+		sourceColumn: Flag_Fat
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Senhas/Gerente = m
+		mode: import
+		queryGroup: Dimensao
+		source =
+				let
+				    Fonte = PowerBI.Dataflows(null),
+				    #"773d6c88-1672-4aca-b98d-44606c26c75a" = Fonte{[workspaceId="773d6c88-1672-4aca-b98d-44606c26c75a"]}[Data],
+				    #"80fe7f1e-ecc9-44d7-a135-60b5879356ce" = #"773d6c88-1672-4aca-b98d-44606c26c75a"{[dataflowId="80fe7f1e-ecc9-44d7-a135-60b5879356ce"]}[Data],
+				    #"Senhas/Gerente1" = #"80fe7f1e-ecc9-44d7-a135-60b5879356ce"{[entity="Senhas/Gerente"]}[Data]
+				in
+				    #"Senhas/Gerente1"
+
+	annotation PBI_ResultType = Table
+

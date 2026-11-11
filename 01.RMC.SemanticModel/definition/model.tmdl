@@ -3,34 +3,41 @@ model Model
 	defaultPowerBIDataSourceVersion: powerBI_V3
 	sourceQueryCulture: pt-BR
 	dataAccessOptions
+		fastCombine
 		legacyRedirects
 		returnErrorValuesAsNull
+
+queryGroup Dimensao
+
+	annotation PBI_QueryGroupOrder = 0
+
+queryGroup Fatos
+
+	annotation PBI_QueryGroupOrder = 1
+
+queryGroup 'Fatos Dim'
+
+	annotation PBI_QueryGroupOrder = 0
 
 annotation __PBI_TimeIntelligenceEnabled = 1
 
 annotation PBI_ProTooling = ["DevMode"]
 
-annotation PBI_QueryOrder = ["TB_Rep","TB_Cliente","TB_Fornecedor","TB_Fatos","TB_Pedidos","TB_Produtos"]
+annotation PBI_QueryOrder = ["TB_CLIENTE","TB_FAMRMC","TB_MOTIVO","TB_PRODUTO","TB_REDE","TB_REP","UF/REGIÃO","Senhas/Gerente","_Medidas2","DRE_Geral - Plan1","DRE_OUT","DRE_Geral - Plan"]
 
-ref table TB_Rep
-ref table TB_Cliente
-ref table DateTableTemplate_5e9c44a2-163d-4a44-a28c-2b425fa4f50d
-ref table LocalDateTable_3bfd1a40-9e0e-4a64-8463-74deb10c71e3
-ref table TB_Fornecedor
-ref table LocalDateTable_630b0fb4-9e0e-4d92-b381-40cfbf53ec7e
-ref table LocalDateTable_3514e2da-4727-4c57-aafe-3cfa79d62b1e
-ref table LocalDateTable_68a0dfc9-a6f3-411d-8252-7e14bb7d84cd
-ref table LocalDateTable_6cf33109-9d7b-4bcf-82f6-57930e194fb1
-ref table LocalDateTable_1dfd8196-f496-4beb-bd30-f21460965bab
-ref table LocalDateTable_7c30a6b6-dc15-45f3-94a8-4aa39f798529
-ref table LocalDateTable_f2a65d7f-156c-4332-835f-8417ec640808
-ref table LocalDateTable_6f5fdb3f-c060-4b89-83db-9ca64591d873
-ref table LocalDateTable_06ac062b-11f8-4162-a44e-aa4a6f6da695
-ref table TB_Fatos
-ref table LocalDateTable_d51dbc6a-e9f2-4fe3-a0a2-7f15f270a5e3
-ref table TB_Pedidos
-ref table LocalDateTable_47239b23-c000-4975-a5c0-d4391c2223c8
-ref table TB_Produtos
+ref table TB_CLIENTE
+ref table DateTableTemplate_78b55ba2-e584-46a4-b1ec-5613fc0885e0
+ref table LocalDateTable_2377e55a-1692-492d-908c-e6af571c1aa2
+ref table TB_FAMRMC
+ref table TB_MOTIVO
+ref table TB_PRODUTO
+ref table TB_REDE
+ref table TB_REP
+ref table UF/REGIÃO
+ref table Senhas/Gerente
+ref table 'DRE_Geral - Plan'
+ref table LocalDateTable_566b1da9-6716-46d3-9597-3b5d3490fcdf
+ref table LocalDateTable_1ac76af7-c5e4-4e9a-9714-cb12499eae2c
 
 ref cultureInfo pt-BR
 

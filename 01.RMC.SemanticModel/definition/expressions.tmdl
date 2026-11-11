@@ -1,0 +1,41 @@
+expression _Medidas2 =
+		let
+		  Origem = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [#"Coluna 1" = _t]),
+		    #"Colunas Removidas" = Table.RemoveColumns(Origem,{"Coluna 1"})
+		in
+		  #"Colunas Removidas"
+	lineageTag: 48309e41-c0e0-41e5-bf38-02d593bb73c1
+
+	annotation PBI_ResultType = Table
+
+expression 'DRE_Geral - Plan1' =
+		let
+		  Origem = Excel.Workbook(File.Contents("\\dados\Financeiro\Controladoria\BD_BI\DRE CLIENTE CONSOLIDADO\DRE CLIENTE_10112026.xlsx"), null, true),
+		  #"Navegação 1" = Origem{[Item = "DRE_Geral - Jan26 a Set26", Kind = "Sheet"]}[Data],
+		  #"Linhas filtradas" = Table.SelectRows(#"Navegação 1", each [Column1] <> null and [Column1] <> ""),
+		  #"Cabeçalhos promovidos" = Table.PromoteHeaders(#"Linhas filtradas", [PromoteAllScalars = true]),
+		  #"As outras colunas foram removidas" = Table.SelectColumns(#"Cabeçalhos promovidos", {"Operacao", "Filial", "Mes_Ano", "Data_NF", "Tipo_Nota", "Codigo_repres_NF", "Nota_Fiscal", "Cod_Cliente", "CFOP", "CodProduto", "Qtd_Item", "CPV_Item_Venda", "Valor_Venda", "Valor_CPV_Bonif", "Valor_Desconto", "Valor_Outras", "Valor_IPI", "Valor_ICMS", "Valor_FCP", "Valor_ST", "Valor_PIS_Venda", "valor_COFINS", "Total_Impostos", "Valor_Comissao", "CPV_Proc_Fixo", "DESP_Oper_Fixa", "CRED_Impostos", "Verba_Fixa", "Verba_Variavel", "Frete", "Motivo_Devolucao"}),
+		  #"Tipo de coluna alterado 1" = Table.TransformColumnTypes(#"As outras colunas foram removidas", {{"Operacao", type text}, {"Tipo_Nota", type text}, {"Motivo_Devolucao", type text}, {"Frete", type number}, {"Verba_Variavel", type number}, {"Verba_Fixa", type number}, {"CRED_Impostos", type number}, {"DESP_Oper_Fixa", type number}, {"CPV_Proc_Fixo", type number}, {"Valor_Comissao", type number}, {"Total_Impostos", type number}, {"valor_COFINS", type number}, {"Valor_PIS_Venda", type number}, {"Valor_ST", type number}, {"Valor_FCP", type number}, {"Valor_ICMS", type number}, {"Valor_IPI", type number}, {"Valor_Outras", type number}, {"Valor_Desconto", type number}, {"Valor_CPV_Bonif", type number}, {"Valor_Venda", type number}, {"CPV_Item_Venda", type number}, {"Qtd_Item", type number}, {"CodProduto", type text}, {"CFOP", type text}, {"Cod_Cliente", Int64.Type}, {"Nota_Fiscal", Int64.Type}, {"Codigo_repres_NF", type number}, {"Data_NF", type date}, {"Mes_Ano", type date}, {"Filial", Int64.Type}})
+		in
+		  #"Tipo de coluna alterado 1"
+	lineageTag: 1904f0fb-e52d-4302-8ed0-1409fcc16c4a
+	queryGroup: 'Fatos Dim'
+
+	annotation PBI_ResultType = Table
+
+expression DRE_OUT =
+		let
+		  Origem = Excel.Workbook(File.Contents("\\dados\Financeiro\Controladoria\BD_BI\DRE CLIENTE CONSOLIDADO\DRE-Out2026_11112026.xlsx"), null, true),
+		  #"Navegação 1" = Origem{[Item = "Planilha1", Kind = "Sheet"]}[Data],
+		  #"Linhas filtradas" = Table.SelectRows(#"Navegação 1", each [Column1] <> null and [Column1] <> ""),
+		  #"Cabeçalhos promovidos" = Table.PromoteHeaders(#"Linhas filtradas", [PromoteAllScalars = true]),
+		  #"As outras colunas foram removidas" = Table.SelectColumns(#"Cabeçalhos promovidos", {"Operacao", "Filial", "Mes_Ano", "Data_NF", "Tipo_Nota", "Codigo_repres_NF", "Nota_Fiscal", "Cod_Cliente", "CFOP", "CodProduto", "Qtd_Item", "CPV_Item_Venda", "Valor_Venda", "Valor_CPV_Bonif", "Valor_Desconto", "Valor_Outras", "Valor_IPI", "Valor_ICMS", "Valor_FCP", "Valor_ST", "Valor_PIS_Venda", "valor_COFINS", "Total_Impostos", "Valor_Comissao", "CPV_Proc_Fixo", "DESP_Oper_Fixa", "CRED_Impostos", "Verba_Fixa", "Verba_Variavel", "Frete", "Motivo"}),
+		  #"Tipo de coluna alterado 1" = Table.TransformColumnTypes(#"As outras colunas foram removidas", {{"Operacao", type text}, {"Tipo_Nota", type text}, {"Motivo", type text}, {"Frete", type number}, {"Verba_Variavel", type number}, {"Verba_Fixa", type number}, {"CRED_Impostos", type number}, {"DESP_Oper_Fixa", type number}, {"CPV_Proc_Fixo", type number}, {"Valor_Comissao", type number}, {"Total_Impostos", type number}, {"valor_COFINS", type number}, {"Valor_PIS_Venda", type number}, {"Valor_ST", type number}, {"Valor_FCP", type number}, {"Valor_ICMS", type number}, {"Valor_IPI", type number}, {"Valor_Outras", type number}, {"Valor_Desconto", type number}, {"Valor_CPV_Bonif", type number}, {"Valor_Venda", type number}, {"CPV_Item_Venda", type number}, {"Qtd_Item", type number}, {"CodProduto", type text}, {"CFOP", type text}, {"Cod_Cliente", Int64.Type}, {"Nota_Fiscal", Int64.Type}, {"Codigo_repres_NF", type number}, {"Data_NF", type date}, {"Mes_Ano", type date}, {"Filial", Int64.Type}}),
+		  #"Colunas renomeadas" = Table.RenameColumns(#"Tipo de coluna alterado 1", {{"Motivo", "Motivo_Devolucao"}})
+		in
+		  #"Colunas renomeadas"
+	lineageTag: b04336df-8d7a-4b9e-b495-dc3a2b57097a
+	queryGroup: 'Fatos Dim'
+
+	annotation PBI_ResultType = Table
+

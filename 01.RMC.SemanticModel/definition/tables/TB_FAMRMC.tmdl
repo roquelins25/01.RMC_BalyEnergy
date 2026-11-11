@@ -1,0 +1,49 @@
+table TB_FAMRMC
+	lineageTag: 381051cf-12c0-4d99-97a7-5a709f6d71d5
+
+	column CODRMC
+		dataType: int64
+		formatString: 0
+		lineageTag: 97715d21-87ce-4c27-9916-ef82616dc379
+		summarizeBy: sum
+		sourceColumn: CODRMC
+
+		annotation SummarizationSetBy = Automatic
+
+	column DESRMC
+		dataType: string
+		lineageTag: bfcc5878-cb5b-4463-83a4-0196c47ebf92
+		summarizeBy: none
+		sourceColumn: DESRMC
+
+		annotation SummarizationSetBy = Automatic
+
+	column XDESRMC
+		dataType: string
+		lineageTag: bf1b8e12-8c85-4596-b32b-5c9d3e7c6d84
+		summarizeBy: none
+		sourceColumn: XDESRMC
+
+		annotation SummarizationSetBy = Automatic
+
+	partition TB_FAMRMC = m
+		mode: import
+		queryGroup: Dimensao
+		source = ```
+				let
+				    Fonte = Oracle.Database(
+					"147.15.121.67:49182/I260220090255_p.subnetappxts2p.saaspremiumvcn1.oraclevcn.com", 
+					[CommandTimeout = #duration(0, 0, 10, 0),
+				   Query = "
+				SELECT
+				USU_CODFAMDAY AS CODRMC,
+				USU_DESFAMDAY AS DESRMC,
+				USU_CODFAMDAY || ' - ' || USU_DESFAMDAY AS xDESRMC
+				FROM USU_TFAMDAY 
+				   ", HierarchicalNavigation = true])
+				in
+				    Fonte
+				```
+
+	annotation PBI_ResultType = Table
+

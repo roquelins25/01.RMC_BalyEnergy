@@ -1,0 +1,323 @@
+table 'DRE_Geral - Plan'
+	lineageTag: 914da494-5679-4170-a7e4-a674204996e5
+
+	column Operacao
+		dataType: string
+		lineageTag: cc8ac41c-7d2d-482e-a067-5c4a29a92214
+		summarizeBy: none
+		sourceColumn: Operacao
+
+		annotation SummarizationSetBy = Automatic
+
+	column Filial
+		dataType: int64
+		formatString: 0
+		lineageTag: 0ad4a1b4-5d42-4b09-b7d3-672aac9c3557
+		summarizeBy: sum
+		sourceColumn: Filial
+
+		annotation SummarizationSetBy = Automatic
+
+	column Mes_Ano
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: f7edbc8e-451c-435a-9f9d-2d9dbd4adc71
+		summarizeBy: none
+		sourceColumn: Mes_Ano
+
+		variation Variação
+			isDefault
+			relationship: d6c26788-a01e-4381-8eb7-a63ddc6c071b
+			defaultHierarchy: LocalDateTable_566b1da9-6716-46d3-9597-3b5d3490fcdf.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Data_NF
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 625a4068-07e3-4e3c-abe3-02c75b4e9036
+		summarizeBy: none
+		sourceColumn: Data_NF
+
+		variation Variação
+			isDefault
+			relationship: 4c8d46a6-49ab-4e96-8483-ac48f5a2250c
+			defaultHierarchy: LocalDateTable_1ac76af7-c5e4-4e9a-9714-cb12499eae2c.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Tipo_Nota
+		dataType: string
+		lineageTag: 25724df7-cafe-44c4-b2b9-f512908ae3bd
+		summarizeBy: none
+		sourceColumn: Tipo_Nota
+
+		annotation SummarizationSetBy = Automatic
+
+	column Codigo_repres_NF
+		dataType: double
+		lineageTag: c9a0f46b-9f59-46c8-bbc2-3974b906d1c0
+		summarizeBy: sum
+		sourceColumn: Codigo_repres_NF
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Nota_Fiscal
+		dataType: int64
+		formatString: 0
+		lineageTag: 86224e18-a41e-441e-a519-aed32cee430d
+		summarizeBy: sum
+		sourceColumn: Nota_Fiscal
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cod_Cliente
+		dataType: int64
+		formatString: 0
+		lineageTag: de5f8f0d-edd5-4458-a8fe-06b1aad52740
+		summarizeBy: sum
+		sourceColumn: Cod_Cliente
+
+		annotation SummarizationSetBy = Automatic
+
+	column CFOP
+		dataType: string
+		lineageTag: ec51599d-6221-423b-ab45-3f13bb53f274
+		summarizeBy: none
+		sourceColumn: CFOP
+
+		annotation SummarizationSetBy = Automatic
+
+	column CodProduto
+		dataType: string
+		lineageTag: efe25772-e0ca-4e4f-9609-56812521c660
+		summarizeBy: none
+		sourceColumn: CodProduto
+
+		annotation SummarizationSetBy = Automatic
+
+	column Qtd_Item
+		dataType: double
+		lineageTag: ef987b97-f6b3-454f-a55a-07b6f61ea838
+		summarizeBy: sum
+		sourceColumn: Qtd_Item
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CPV_Item_Venda
+		dataType: double
+		lineageTag: 8f39113e-1d4f-473f-899c-3582227a844d
+		summarizeBy: sum
+		sourceColumn: CPV_Item_Venda
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Valor_Venda
+		dataType: double
+		lineageTag: 4da08ff6-88ec-49af-9cbb-dcfe15c6d291
+		summarizeBy: sum
+		sourceColumn: Valor_Venda
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Valor_CPV_Bonif
+		dataType: double
+		lineageTag: 826e2745-93de-4083-9ae9-761f8e7d44eb
+		summarizeBy: sum
+		sourceColumn: Valor_CPV_Bonif
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Valor_Desconto
+		dataType: double
+		lineageTag: 24693b77-e228-4e21-ba9b-b4e40e685910
+		summarizeBy: sum
+		sourceColumn: Valor_Desconto
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Valor_Outras
+		dataType: double
+		lineageTag: 0cd215a9-ebc7-41a5-a686-c687a31b6134
+		summarizeBy: sum
+		sourceColumn: Valor_Outras
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Valor_IPI
+		dataType: double
+		lineageTag: 78283be4-5e0a-45f5-9630-760bd89bf5dc
+		summarizeBy: sum
+		sourceColumn: Valor_IPI
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Valor_ICMS
+		dataType: double
+		lineageTag: 3432a155-ce97-43f7-b5c9-a9efbf4f4fb4
+		summarizeBy: sum
+		sourceColumn: Valor_ICMS
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Valor_FCP
+		dataType: double
+		lineageTag: f1e4377c-7f99-416b-a88b-0f39a3c8101e
+		summarizeBy: sum
+		sourceColumn: Valor_FCP
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Valor_ST
+		dataType: double
+		lineageTag: bc59a9fe-4a2f-4adb-a385-899e2a71acb1
+		summarizeBy: sum
+		sourceColumn: Valor_ST
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Valor_PIS_Venda
+		dataType: double
+		lineageTag: 21388bd2-7c14-47bc-bf17-d4ca173077a3
+		summarizeBy: sum
+		sourceColumn: Valor_PIS_Venda
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column valor_COFINS
+		dataType: double
+		lineageTag: cf576367-f55c-4531-a9ad-4ce4f1c60121
+		summarizeBy: sum
+		sourceColumn: valor_COFINS
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Total_Impostos
+		dataType: double
+		lineageTag: 37a4e54e-262e-4a8b-b338-5ecc4be99d79
+		summarizeBy: sum
+		sourceColumn: Total_Impostos
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Valor_Comissao
+		dataType: double
+		lineageTag: 82d427f7-8710-41e2-b636-32555e15c19d
+		summarizeBy: sum
+		sourceColumn: Valor_Comissao
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CPV_Proc_Fixo
+		dataType: double
+		lineageTag: ea8ae0bd-720f-4e4c-92c3-7f94459286c2
+		summarizeBy: sum
+		sourceColumn: CPV_Proc_Fixo
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column DESP_Oper_Fixa
+		dataType: double
+		lineageTag: 9b1b6015-e255-40e0-bbb3-4fb12c9e473a
+		summarizeBy: sum
+		sourceColumn: DESP_Oper_Fixa
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CRED_Impostos
+		dataType: double
+		lineageTag: 6e062600-cbd8-43ea-ac5c-9bcd0692c1d1
+		summarizeBy: sum
+		sourceColumn: CRED_Impostos
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Verba_Fixa
+		dataType: double
+		lineageTag: cfc5c7e1-aba0-498a-8fa5-114f292e3074
+		summarizeBy: sum
+		sourceColumn: Verba_Fixa
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Verba_Variavel
+		dataType: double
+		lineageTag: 1aaeaa7c-0473-4039-8efe-2e46a72965a8
+		summarizeBy: sum
+		sourceColumn: Verba_Variavel
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Frete
+		dataType: double
+		lineageTag: 5e08cb49-f0c0-4388-82da-f96879b93cbf
+		summarizeBy: sum
+		sourceColumn: Frete
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Motivo_Devolucao
+		dataType: string
+		lineageTag: 168d4c7e-f07c-4e48-aade-05b4bbf5bae6
+		summarizeBy: none
+		sourceColumn: Motivo_Devolucao
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'DRE_Geral - Plan' = m
+		mode: import
+		queryGroup: Fatos
+		source =
+				let
+				  Origem = Table.Combine({#"DRE_Geral - Plan1", DRE_OUT})
+				in
+				  Origem
+
+	annotation PBI_ResultType = Table
+

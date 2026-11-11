@@ -1,0 +1,11 @@
+# credenciais
+.env
+
+# ambiente
+.venv/
+__pycache__/
+
+# dados (grandes e regeneraveis pelo pipeline)
+medalion/bronze/
+medalion/silver/
+medalion/gold/

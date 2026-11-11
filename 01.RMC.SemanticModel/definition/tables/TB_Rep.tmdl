@@ -1,107 +1,113 @@
-table TB_Rep
-	lineageTag: ff829259-da5e-4e8b-b4f3-64ca019fbaf8
+table TB_REP
+	lineageTag: f6f33123-2da4-4731-b6c6-9d6215d5e8c3
 
-	column codrep
+	column CODREP
 		dataType: int64
 		formatString: 0
-		lineageTag: ea1f3cb3-f68c-48f9-94de-49470a96f546
-		summarizeBy: none
-		sourceColumn: codrep
+		lineageTag: 2e76970f-f85d-4395-9c0e-e47ca968d20d
+		summarizeBy: sum
+		sourceColumn: CODREP
 
 		annotation SummarizationSetBy = Automatic
 
-	column nomrep
+	column NOMREP
 		dataType: string
-		lineageTag: 8226135c-f504-4b98-9b82-51fa88619049
+		lineageTag: 910ba5a1-ce59-449a-a23b-25421cd45f48
 		summarizeBy: none
-		sourceColumn: nomrep
+		sourceColumn: NOMREP
 
 		annotation SummarizationSetBy = Automatic
 
-	column aperep
+	column APEREP
 		dataType: string
-		lineageTag: da51cb7e-272c-4e67-9b3b-cb3088ae1a76
+		lineageTag: dfd297f4-1a4a-43ac-a703-b7234d0394fb
 		summarizeBy: none
-		sourceColumn: aperep
+		sourceColumn: APEREP
 
 		annotation SummarizationSetBy = Automatic
 
-	column tiprep
+	column TIPREP
 		dataType: string
-		lineageTag: b71f0ffb-a66c-4659-9f63-9c1b817afd54
+		lineageTag: f566d2ee-9f36-40c4-831d-6b32a3b5c12f
 		summarizeBy: none
-		sourceColumn: tiprep
+		sourceColumn: TIPREP
 
 		annotation SummarizationSetBy = Automatic
 
-	column cidrep
+	column CIDREP
 		dataType: string
-		lineageTag: 716662ba-d6b3-43cc-8af8-aee38a4c70a7
+		lineageTag: af1551bd-1443-4b2a-9514-d0259a73718c
 		summarizeBy: none
-		sourceColumn: cidrep
+		sourceColumn: CIDREP
 
 		annotation SummarizationSetBy = Automatic
 
-	column sigufs
+	column SIGUFS
 		dataType: string
-		lineageTag: 200625d1-90ec-4f8d-a70c-a1b7a8aeaa79
+		lineageTag: 9dfb2dc6-8574-48f3-b918-1fefeed1becd
 		summarizeBy: none
-		sourceColumn: sigufs
+		sourceColumn: SIGUFS
 
 		annotation SummarizationSetBy = Automatic
 
-	column fonrep
+	column FONREP
 		dataType: string
-		lineageTag: bd6819b5-5e9d-4c28-ade4-108850188a61
+		lineageTag: 2919eb1c-49ce-4132-8e65-aad3e94ad2c3
 		summarizeBy: none
-		sourceColumn: fonrep
+		sourceColumn: FONREP
 
 		annotation SummarizationSetBy = Automatic
 
-	column sitrep
+	column SITREP
 		dataType: string
-		lineageTag: 600aef07-9b21-4a3f-b380-3b1388d1786a
+		lineageTag: 8f9445a8-821f-4f5d-8eaf-ced3dd71ec11
 		summarizeBy: none
-		sourceColumn: sitrep
+		sourceColumn: SITREP
 
 		annotation SummarizationSetBy = Automatic
 
-	column repsup
+	column REPSUP
 		dataType: int64
 		formatString: 0
-		lineageTag: 8eb56de6-7bdc-4dac-aac9-c83d8c9c3f46
-		summarizeBy: none
-		sourceColumn: repsup
+		lineageTag: da59a945-38cc-4030-9277-b5f26ff83e33
+		summarizeBy: sum
+		sourceColumn: REPSUP
 
 		annotation SummarizationSetBy = Automatic
 
-	column nomsup
+	column NOMSUP
 		dataType: string
-		lineageTag: 4a9af0bf-7eed-438d-a276-6e4aa0ed1cf1
+		lineageTag: d4010fec-9aeb-42f7-bfd1-cdf11ceffb8f
 		summarizeBy: none
-		sourceColumn: nomsup
+		sourceColumn: NOMSUP
 
 		annotation SummarizationSetBy = Automatic
 
-	column Rep_concat
+	column REP_CONCAT
 		dataType: int64
 		formatString: 0
-		lineageTag: f9849f94-1a9c-401e-846f-0f42314b2c36
-		summarizeBy: none
-		sourceColumn: Rep_concat
+		lineageTag: 1061270f-3fe2-4e93-bb8f-34d10bb2c6db
+		summarizeBy: sum
+		sourceColumn: REP_CONCAT
 
 		annotation SummarizationSetBy = Automatic
 
-	partition TB_Rep = m
+	partition TB_REP = m
 		mode: import
-		source =
+		queryGroup: Dimensao
+		source = ```
 				let
-				    Fonte = Sql.Database("159.112.182.77", "I260220090255_ERPP"),
-				    sapiens_producao_usu_view090rep = Fonte{[Schema="sapiens_producao",Item="usu_view090rep"]}[Data]
+				    Fonte = Oracle.Database(
+					"147.15.121.67:49182/I260220090255_p.subnetappxts2p.saaspremiumvcn1.oraclevcn.com", 
+					[CommandTimeout = #duration(0, 0, 10, 0),
+				   Query = "
+				SELECT
+				*
+				FROM I260220090255_ERPP.USU_V090REP
+				   ", HierarchicalNavigation = true])
 				in
-				    sapiens_producao_usu_view090rep
-
-	annotation PBI_NavigationStepName = Navegação
+				    Fonte
+				```
 
 	annotation PBI_ResultType = Table
 

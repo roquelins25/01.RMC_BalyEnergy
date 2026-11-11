@@ -1,0 +1,46 @@
+table TB_MOTIVO
+	lineageTag: f9fde5e7-fca9-42b4-ac9a-1734bd282a61
+
+	column USU_CODMAR
+		dataType: string
+		lineageTag: 48429d38-1ba3-4af1-8861-41d7452efa57
+		summarizeBy: none
+		sourceColumn: USU_CODMAR
+
+		annotation SummarizationSetBy = Automatic
+
+	column USU_NOMMAR
+		dataType: string
+		lineageTag: 86eb4492-55e0-47cc-911f-e59a596a96fd
+		summarizeBy: none
+		sourceColumn: USU_NOMMAR
+
+		annotation SummarizationSetBy = Automatic
+
+	column USU_SITMAR
+		dataType: string
+		lineageTag: 00f8fbec-e7cd-4140-bd65-36d6e872c381
+		summarizeBy: none
+		sourceColumn: USU_SITMAR
+
+		annotation SummarizationSetBy = Automatic
+
+	partition TB_MOTIVO = m
+		mode: import
+		queryGroup: Dimensao
+		source = ```
+				let
+				    Fonte = Oracle.Database(
+					"147.15.121.67:49182/I260220090255_p.subnetappxts2p.saaspremiumvcn1.oraclevcn.com", 
+					[CommandTimeout = #duration(0, 0, 10, 0),
+				   Query = "
+				SELECT
+				*
+				FROM usu_te440mot
+				   ", HierarchicalNavigation = true])
+				in
+				    Fonte
+				```
+
+	annotation PBI_ResultType = Table
+

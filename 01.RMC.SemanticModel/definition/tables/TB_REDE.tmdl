@@ -1,0 +1,58 @@
+table TB_REDE
+	lineageTag: 2489acc2-f12a-4394-9b66-e9a76d3d477a
+
+	column CODGRE
+		dataType: int64
+		formatString: 0
+		lineageTag: a79170e9-1e3e-4c4c-8f29-e054469fc300
+		summarizeBy: sum
+		sourceColumn: CODGRE
+
+		annotation SummarizationSetBy = Automatic
+
+	column NOMGRE
+		dataType: string
+		lineageTag: c2e176fe-ada5-4739-98b6-d6320e498227
+		summarizeBy: none
+		sourceColumn: NOMGRE
+
+		annotation SummarizationSetBy = Automatic
+
+	column SIGGRE
+		dataType: string
+		lineageTag: c7cded40-c959-44f1-aa38-c14b037e7a16
+		summarizeBy: none
+		sourceColumn: SIGGRE
+
+		annotation SummarizationSetBy = Automatic
+
+	column XNOMGRE
+		dataType: string
+		lineageTag: d2d3f885-ac5e-46fb-a2d3-7989b182cfc1
+		summarizeBy: none
+		sourceColumn: XNOMGRE
+
+		annotation SummarizationSetBy = Automatic
+
+	partition TB_REDE = m
+		mode: import
+		queryGroup: Dimensao
+		source = ```
+				let
+				    Fonte = Oracle.Database(
+					"147.15.121.67:49182/I260220090255_p.subnetappxts2p.saaspremiumvcn1.oraclevcn.com", 
+					[CommandTimeout = #duration(0, 0, 10, 0),
+				   Query = "
+				SELECT
+				CODGRE,
+				NOMGRE,
+				SIGGRE,
+				CODGRE || ' - ' || UPPER( NOMGRE ) AS xNOMGRE
+				FROM E069GRE
+				   ", HierarchicalNavigation = true])
+				in
+				    Fonte
+				```
+
+	annotation PBI_ResultType = Table
+

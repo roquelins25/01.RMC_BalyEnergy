@@ -1,72 +1,15 @@
-relationship 75e9a094-ee8e-48ab-8bbe-66d458724928
+relationship fc888e02-d066-404b-b23f-e1fe9032cec4
 	joinOnDateBehavior: datePartOnly
-	fromColumn: TB_Cliente.datcad
-	toColumn: LocalDateTable_3bfd1a40-9e0e-4a64-8463-74deb10c71e3.Date
+	fromColumn: TB_CLIENTE.DATCAD
+	toColumn: LocalDateTable_2377e55a-1692-492d-908c-e6af571c1aa2.Date
 
-relationship ff7b91ea-653e-4dae-80ab-cb3c4dc62a1f
+relationship d6c26788-a01e-4381-8eb7-a63ddc6c071b
 	joinOnDateBehavior: datePartOnly
-	fromColumn: TB_Fornecedor.datcad
-	toColumn: LocalDateTable_630b0fb4-9e0e-4d92-b381-40cfbf53ec7e.Date
+	fromColumn: 'DRE_Geral - Plan'.Mes_Ano
+	toColumn: LocalDateTable_566b1da9-6716-46d3-9597-3b5d3490fcdf.Date
 
-relationship 54ffeb0f-e0f2-4294-a04b-a29eebe5c09d
+relationship 4c8d46a6-49ab-4e96-8483-ac48f5a2250c
 	joinOnDateBehavior: datePartOnly
-	fromColumn: TB_Fornecedor.datatu
-	toColumn: LocalDateTable_3514e2da-4727-4c57-aafe-3cfa79d62b1e.Date
-
-relationship b9b065f3-c740-4d3c-8027-178909806b80
-	joinOnDateBehavior: datePartOnly
-	fromColumn: TB_Fornecedor.datmot
-	toColumn: LocalDateTable_68a0dfc9-a6f3-411d-8252-7e14bb7d84cd.Date
-
-relationship 17bb9221-9eea-47d1-ad56-149c0aef1a44
-	joinOnDateBehavior: datePartOnly
-	fromColumn: TB_Fornecedor.datpal
-	toColumn: LocalDateTable_6cf33109-9d7b-4bcf-82f6-57930e194fb1.Date
-
-relationship 490851e1-00ea-40fa-9d03-78e9cea09b8e
-	joinOnDateBehavior: datePartOnly
-	fromColumn: TB_Fornecedor.datlau
-	toColumn: LocalDateTable_1dfd8196-f496-4beb-bd30-f21460965bab.Date
-
-relationship 415153f9-967c-4975-bb57-02082bf832a9
-	joinOnDateBehavior: datePartOnly
-	fromColumn: TB_Fornecedor.datexd
-	toColumn: LocalDateTable_7c30a6b6-dc15-45f3-94a8-4aa39f798529.Date
-
-relationship c7d0a1fb-6afc-47dc-8f8b-714f054bde16
-	joinOnDateBehavior: datePartOnly
-	fromColumn: TB_Fornecedor.datnas
-	toColumn: LocalDateTable_f2a65d7f-156c-4332-835f-8417ec640808.Date
-
-relationship f1785bf9-a702-488c-9634-c2a281f37da5
-	joinOnDateBehavior: datePartOnly
-	fromColumn: TB_Fornecedor.daticp
-	toColumn: LocalDateTable_6f5fdb3f-c060-4b89-83db-9ca64591d873.Date
-
-relationship ad4b5cd8-1cb7-49b7-915a-d5bb22a06a7d
-	joinOnDateBehavior: datePartOnly
-	fromColumn: TB_Fornecedor.datfcp
-	toColumn: LocalDateTable_06ac062b-11f8-4162-a44e-aa4a6f6da695.Date
-
-relationship 044c8fb0-bb5a-48b0-8070-09868cc2e09e
-	joinOnDateBehavior: datePartOnly
-	fromColumn: TB_Fatos.e140nfvdatemi
-	toColumn: LocalDateTable_d51dbc6a-e9f2-4fe3-a0a2-7f15f270a5e3.Date
-
-relationship 649407c9-a5f5-4b9b-8241-b34a00eb8907
-	joinOnDateBehavior: datePartOnly
-	fromColumn: TB_Pedidos.datger
-	toColumn: LocalDateTable_47239b23-c000-4975-a5c0-d4391c2223c8.Date
-
-relationship AutoDetected_d97d544a-e87d-4623-9fcb-78c966ca09d7
-	fromColumn: TB_Pedidos.codrep
-	toColumn: TB_Rep.codrep
-
-relationship AutoDetected_bb67d1bb-c802-4ded-9f02-b0fd8c832543
-	fromColumn: TB_Pedidos.codcli
-	toColumn: TB_Cliente.codcli
-
-relationship AutoDetected_7a708f52-15b1-49cf-9c26-07034391267e
-	fromColumn: TB_Pedidos.codpro
-	toColumn: TB_Produtos.codpro
+	fromColumn: 'DRE_Geral - Plan'.Data_NF
+	toColumn: LocalDateTable_1ac76af7-c5e4-4e9a-9714-cb12499eae2c.Date
 

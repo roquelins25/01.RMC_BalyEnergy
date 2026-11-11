@@ -1,0 +1,79 @@
+table UF/REGIÃO
+	lineageTag: 3f444096-be33-4179-974d-366173d15cbc
+
+	column UF
+		dataType: string
+		lineageTag: e344744e-5093-4d30-8b02-abba4ecd542b
+		summarizeBy: none
+		sourceColumn: UF
+
+		annotation SummarizationSetBy = Automatic
+
+	column Região/Grupo
+		dataType: string
+		lineageTag: a0d93f9e-6d24-4b62-898c-87cc4ed3c2ac
+		summarizeBy: none
+		sourceColumn: Região/Grupo
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID
+		dataType: string
+		lineageTag: f743cd33-3a49-4583-b863-2e8ba9176173
+		summarizeBy: none
+		sourceColumn: ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column GESTÃO
+		dataType: string
+		lineageTag: a743dd5b-1254-4707-ad0e-9f3e983dea4b
+		summarizeBy: none
+		sourceColumn: GESTÃO
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORC_VER_2025
+		dataType: double
+		lineageTag: d0d3aae6-578b-4758-840e-acacce8ea41f
+		summarizeBy: sum
+		sourceColumn: ORC_VER_2025
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ORC_VER_2026
+		dataType: double
+		lineageTag: 0bcdc874-9b46-4c26-b1a5-cc3a2598bc5a
+		summarizeBy: sum
+		sourceColumn: ORC_VER_2026
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ORC_BON_2026
+		dataType: double
+		lineageTag: d5ce7750-ec28-42c0-bcf6-9bfb398f8066
+		summarizeBy: sum
+		sourceColumn: ORC_BON_2026
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition UF/REGIÃO = m
+		mode: import
+		queryGroup: Dimensao
+		source =
+				let
+				    Fonte = PowerBI.Dataflows(null),
+				    #"773d6c88-1672-4aca-b98d-44606c26c75a" = Fonte{[workspaceId="773d6c88-1672-4aca-b98d-44606c26c75a"]}[Data],
+				    #"80fe7f1e-ecc9-44d7-a135-60b5879356ce" = #"773d6c88-1672-4aca-b98d-44606c26c75a"{[dataflowId="80fe7f1e-ecc9-44d7-a135-60b5879356ce"]}[Data],
+				    #"UF/REGIÃO1" = #"80fe7f1e-ecc9-44d7-a135-60b5879356ce"{[entity="UF/REGIÃO"]}[Data]
+				in
+				    #"UF/REGIÃO1"
+
+	annotation PBI_ResultType = Table
+
